@@ -20,7 +20,7 @@ A small, secure password generator that runs entirely in your browser. No depend
 
 ## Strength estimate
 
-Entropy ≈ `length × log₂(pool size)` bits. For example, 16 characters from all four sets (88 characters) give about 103 bits.
+Entropy ≈ `length × log₂(pool size)` bits. For example, 16 characters from all four sets (86 characters) give about 103 bits.
 
 | Bits  | Label       |
 |-------|-------------|
