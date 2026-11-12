@@ -1,0 +1,76 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #eef2f7;
+  --card: #ffffff;
+  --ink: #1c2433;
+  --muted: #667085;
+  --line: #d6dce6;
+  --accent: #3159d6;
+  --weak: #d64545;
+  --fair: #e0a32e;
+  --strong: #3fa36b;
+  --very-strong: #23804f;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 30px rgba(28, 36, 51, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+h1 { font-size: 1.4rem; }
+
+.output { display: flex; gap: 0.5rem; }
+#password {
+  flex: 1;
+  min-width: 0;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f7f9fc;
+  color: var(--ink);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 0.6rem 1rem;
+}
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+
+.meter { height: 8px; background: var(--line); border-radius: 999px; overflow: hidden; }
+#meter-fill { height: 100%; width: 0; border-radius: inherit; transition: width 0.3s ease, background-color 0.3s ease; }
+.strength p { margin-top: 0.4rem; font-size: 0.9rem; color: var(--muted); }
+.strength strong { color: var(--ink); }
+
+#options { display: flex; flex-direction: column; gap: 0.55rem; }
+#options label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+#options .length { flex-wrap: wrap; }
+#options .length input { flex-basis: 100%; accent-color: var(--accent); }
+#options input[type="checkbox"] { width: 1.05rem; height: 1.05rem; accent-color: var(--accent); }
+
+#error { color: var(--weak); font-size: 0.9rem; min-height: 1.2em; }
+.note { font-size: 0.8rem; color: var(--muted); }

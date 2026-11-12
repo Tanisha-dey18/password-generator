@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>🔐 Password Generator</h1>
+
+    <div class="output">
+      <input id="password" type="text" readonly aria-label="Generated password" spellcheck="false">
+      <button id="copy" title="Copy to clipboard">Copy</button>
+    </div>
+
+    <div class="strength">
+      <div class="meter"><div id="meter-fill"></div></div>
+      <p><strong id="strength-label">–</strong> · <span id="bits">0</span> bits of entropy</p>
+    </div>
+
+    <form id="options">
+      <label class="length">
+        Length <strong id="length-value">16</strong>
+        <input id="length" type="range" min="4" max="64" value="16">
+      </label>
+      <label><input type="checkbox" name="lower" checked> Lowercase (a–z)</label>
+      <label><input type="checkbox" name="upper" checked> Uppercase (A–Z)</label>
+      <label><input type="checkbox" name="digits" checked> Numbers (0–9)</label>
+      <label><input type="checkbox" name="symbols" checked> Symbols (!@#…)</label>
+      <label><input type="checkbox" name="avoidLookalikes"> Avoid look-alikes (I, l, 1, O, 0, o)</label>
+    </form>
+
+    <p id="error" role="alert"></p>
+    <button id="generate" class="primary">Generate new password</button>
+    <p class="note">Passwords are created in your browser with <code>crypto.getRandomValues</code> and never leave this page.</p>
+  </main>
+
+  <script src="password.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
